@@ -15,6 +15,8 @@
     plt.show()
     ```
 
+<hr />
+
 > Classification dataset
 
 ```python
