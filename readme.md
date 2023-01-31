@@ -1,4 +1,4 @@
-1.  Show plots for bias and variance vs increasing complexity of decision tree on the given regression dataset. You can use the decision tree implementation from assignment 1 (or sklearn tree). [**1 mark**]
+1.  Show plots for bias and variance vs increasing complexity (depth) of decision tree on the given regression dataset. You can use the decision tree implementation from assignment 1 (or sklearn tree). [**1 mark**]
 
     ```python
     import numpy as np
@@ -29,19 +29,28 @@ import matplotlib.pyplot as plt
 plt.scatter(X[:, 0], X[:, 1], c=y)
 ```
 
-2. Split the classification dataset into a training set (70%) and a test set (30%). Implement a weighted decision tree and train it using the training set. Assign weights to each sample using `??`. Plot and visualise the decision tree boundary. Use the test set to evaluate the performance of the weighted decision tree and compare your implementation with sklearn. You can copy your implementation of decision tree from assignment 1 to this repository and edit it to take sample weights as an argument while learning the decision tree(Default weight is 1 for each sample). [**2 marks**]
+2. Shuffle the dataset and split the classification dataset into a training set (70%) and a test set (30%). Implement a weighted decision tree and train it using the training set. Use uniform(0,1) distribution to assign weights randomly to the samples. Plot and visualise the decision tree boundary. Use the test set to evaluate the performance of the weighted decision tree and compare your implementation with sklearn. You can copy your implementation of decision tree from assignment 1 to this repository and edit it to take sample weights as an argument while learning the decision tree(Default weight is 1 for each sample). [**2 marks**]
 
-3. a) Implement Adaboost on Decision Stump (depth=1 tree). You could use Decision Tree learnt in assignment 1 or sklearn decision tree and solve it for the case of real input and discrete output. Edit `ensemble/ADABoost.py` **[2 marks]**
+3. a) Implement Adaboost on Decision Stump (depth=1 tree). You can use Decision Tree learnt in assignment 1 or sklearn decision tree and solve it for the case of real input and discrete output. Edit `ensemble/ADABoost.py` **[2 marks]**
 
-   b) Implement AdaBoostClassifier on classification data set. Fix a random seed of 42. Shuffle the dataset according to this random seed. Use the first 60% of the data for training and last 40% of the data set for testing. Plot the decision surfaces and compare the accuracy of AdaBoostClassifier using 3 estimators over decision stump. Include your code in `q3_ADABoost.py`. **[2 marks]**
+   b) Implement AdaBoostClassifier on classification data set. Plot the decision surfaces and compare the accuracy of AdaBoostClassifier using 3 estimators over decision stump. Include your code in `q3_ADABoost.py`. **[1 marks]**
 
-4. a) Implement Bagging(BaseModel, num_estimators): where base model is the DecisionTree you had implemented in assignment 1 (or sklearn decision tree). In a later assignment, you would have to implement the above over LinearRegression() also. Edit `ensemble/bagging.py`. Use `q4_Bagging.py` for testing.[\_We will be implementing only for DecisionTrees\* [**2 marks**]]
+   Example for decision surface
+   <img src="./decision_surface_example.png"/>
+
+   You can refer to the [this](https://machinelearningmastery.com/plot-a-decision-surface-for-machine-learning/) for plotting decision surface. You **cannot** use any inbuilt functions like `DecisionBoundaryDisplay` for this.
+
+4. a) Implement Bagging(BaseModel, num_estimators): where base model is the DecisionTree you had implemented in assignment 1 (or sklearn decision tree). In a later assignment, you would have to implement the above over LinearRegression() also, but for now you only have to implement it for Decision Trees. Edit `ensemble/bagging.py`. Use `q4_Bagging.py` for testing.[**2 marks**]
 
    b) Implement bagging in parallel fashion, where each decision tree is learnt simultaneously. Perform timing analysis for parallel implementation and normal implementation. Include the code in `q4_Bagging.py`. **[2 marks]**
 
+   You can implement this by refering to [this](https://machinelearningmastery.com/multiprocessing-in-python/) link.
+
+   You can perform multi processing anyway you see fit, a suggested way is to add a parameter `n_jobs` in your Bagging Classifier and add code for multi processing there itself.
+
 5. a) Implement RandomForestClassifier() and RandomForestRegressor() classes in `tree/randomForest.py`. Use `q5_RandomForest.py` for testing.[**2 marks**]
 
-   b) Generate the plots for classification data set. Fix a random seed of 42. Shuffle the dataset according to this random seed. Use the first 60% of the data for training and last 40% of the data set for testing. Include you code in `random_forest_classification.py`[**2 marks**]
+   b) Generate the plots for classification data set. Include you code in `random_forest_classification.py`[**1 marks**]
 
 6. Implement Gradient Boosted Decision trees on the regression dataset given below. You need to edit the `ensemble/gradientBoosted.py` and `q6_gradientBoosted.py` **[3 marks]**
 
