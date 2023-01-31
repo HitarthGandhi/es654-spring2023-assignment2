@@ -42,7 +42,7 @@ plt.scatter(X[:, 0], X[:, 1], c=y)
 
 4. a) Implement Bagging(BaseModel, num_estimators): where base model is the DecisionTree you had implemented in assignment 1 (or sklearn decision tree). In a later assignment, you would have to implement the above over LinearRegression() also, but for now you only have to implement it for Decision Trees. Edit `ensemble/bagging.py`. Use `q4_Bagging.py` for testing.[**2 marks**]
 
-   b) Implement bagging in parallel fashion, where each decision tree is learnt simultaneously. Perform timing analysis for parallel implementation and normal implementation. Include the code in `q4_Bagging.py`. **[2 marks]**
+   b) Implement bagging in parallel fashion, where each decision tree is learnt simultaneously. Perform timing analysis for parallel implementation and normal implementation. **[2 marks]**
 
    You can implement this by refering to [this](https://machinelearningmastery.com/multiprocessing-in-python/) link.
 
@@ -74,4 +74,4 @@ plt.scatter(X[:, 0], X[:, 1], c=y)
    [Gradient Boost Part 1 (of 4): Regression Main Ideas](https://www.youtube.com/watch?v=3CC4N4z3GJc) \
    [Gradient Boost Part 2 (of 4): Regression Details](https://www.youtube.com/watch?v=2xudPOBz-vs)
 
-You can answer the subjectve questions (timing analysis, displaying plots) by creating `assignment_q<question-number>_subjective_answers.md`
+You must include your insights (like timing analysis, plots, etc.) for all questions by creating `assignment_q<question-number>_subjective_answers.md` files.
